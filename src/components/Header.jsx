@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillCode } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -20,9 +21,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="/" className="transition-colors hover:text-sky-300">
-              Sobre
-            </a>
+            <Link to="/skills" className="transition-colors hover:text-sky-300">
+              Habilidades
+            </Link>
           </li>
           <li>
             <a href="/" className="transition-colors hover:text-sky-300">

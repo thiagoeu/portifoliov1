@@ -1,6 +1,7 @@
 import CustomButton from "../components/CustomButton.jsx";
 import { IoMdDownload } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import hero from "../assets/hero.png";
 
 const Hero = () => {
@@ -27,10 +28,10 @@ const Hero = () => {
             necessidades reais do projeto e entregar soluções eficientes, com
             código limpo e bem estruturado. Se você está buscando alguém para
             desenvolver seu sistema ou otimizar sua stack,{" "}
-            <span className="font-semibold text-gray-900">
+            <Link to="/" className="font-semibold text-gray-900">
               {" "}
               vamos conversar !
-            </span>
+            </Link>
           </p>
         </div>
 
