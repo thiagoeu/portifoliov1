@@ -7,10 +7,10 @@ import hero from "../assets/hero.png";
 const Hero = () => {
   return (
     <section className="w-full bg-gray-600 text-gray-300">
-      <div className="container mx-auto flex flex-col-reverse items-center justify-between gap-10 px-4 py-16 md:flex-row">
+      <div className="mx-auto flex max-w-6xl flex-col-reverse items-center justify-center gap-10 px-4 py-16 md:flex-row">
         {/* Texto */}
         <div className="space-y-6 text-center md:w-1/2 md:text-left">
-          <h1 className="text-4xl leading-tight font-bold md:text-5xl">
+          <h1 className="text-4xl leading-tight font-bold text-balance md:text-5xl">
             Thiago Araujo
             <span className="block lg:block"> </span>
             <span className="text-gray-900"> Dev. Full Stack</span>
@@ -27,11 +27,8 @@ const Hero = () => {
             interfaces ricas. Minha abordagem é centrada em entender as
             necessidades reais do projeto e entregar soluções eficientes, com
             código limpo e bem estruturado. Se você está buscando alguém para
-            desenvolver seu sistema ou otimizar sua stack,{" "}
-            <Link to="/" className="font-semibold text-gray-900">
-              {" "}
-              vamos conversar !
-            </Link>
+            desenvolver seu sistema ou otimizar sua stack, estou aqui para
+            ajudar.
           </p>
         </div>
 
