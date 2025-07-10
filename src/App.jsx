@@ -1,11 +1,15 @@
-import Footer from "./components/Footer";
+// App.jsx
 import Header from "./components/Header";
+import Hero from "./pages/Hero";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 container mx-auto max-w-screen-xl p-4"></main>
+      <main className="flex-1">
+        <Hero />
+      </main>
       <Footer />
     </div>
   );
