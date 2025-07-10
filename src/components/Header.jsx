@@ -3,8 +3,8 @@ import { AiFillCode } from "react-icons/ai";
 
 const Header = () => {
   return (
-    <header className="bg-slate-800 text-gray-300  w-full sticky top-0 shadow-md z-50">
-      <nav className="flex justify-between items-center p-4 max-w-6xl mx-auto">
+    <header className="sticky top-0 z-50 w-full bg-slate-800 text-gray-300 shadow-md">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between p-4">
         <div>
           <h1 className="text-xl font-bold">
             <a className="flex items-center gap-2" href="/">
@@ -15,22 +15,22 @@ const Header = () => {
         </div>
         <ul className="flex gap-4">
           <li>
-            <a href="/" className="hover:text-sky-300 transition-colors">
+            <a href="/" className="transition-colors hover:text-sky-300">
               Home
             </a>
           </li>
           <li>
-            <a href="/" className="hover:text-sky-300 transition-colors">
+            <a href="/" className="transition-colors hover:text-sky-300">
               Sobre
             </a>
           </li>
           <li>
-            <a href="/" className="hover:text-sky-300 transition-colors">
+            <a href="/" className="transition-colors hover:text-sky-300">
               Contato
             </a>
           </li>
           <li>
-            <a href="/" className="hover:text-sky-300 transition-colors">
+            <a href="/" className="transition-colors hover:text-sky-300">
               Projetos
             </a>
           </li>

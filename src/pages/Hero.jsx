@@ -6,10 +6,10 @@ import hero from "../assets/hero.png";
 const Hero = () => {
   return (
     <section className="w-full bg-gray-600 text-gray-300">
-      <div className="container mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+      <div className="container mx-auto flex flex-col-reverse items-center justify-between gap-10 px-4 py-16 md:flex-row">
         {/* Texto */}
-        <div className="md:w-1/2 text-center md:text-left space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+        <div className="space-y-6 text-center md:w-1/2 md:text-left">
+          <h1 className="text-4xl leading-tight font-bold md:text-5xl">
             Thiago Araujo
             <span className="block lg:block"> </span>
             <span className="text-gray-900"> Dev. Full Stack</span>
@@ -27,7 +27,7 @@ const Hero = () => {
             necessidades reais do projeto e entregar soluções eficientes, com
             código limpo e bem estruturado. Se você está buscando alguém para
             desenvolver seu sistema ou otimizar sua stack,{" "}
-            <span className="text-gray-900 font-semibold">
+            <span className="font-semibold text-gray-900">
               {" "}
               vamos conversar !
             </span>
@@ -35,22 +35,22 @@ const Hero = () => {
         </div>
 
         {/* Imagem + Botões */}
-        <div className="md:w-1/2 flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6 md:w-1/2">
           <img
             src={hero}
             alt="Hero"
-            className="w-64 h-auto md:w-80 rounded-full shadow-lg"
+            className="h-auto w-64 rounded-full shadow-lg md:w-80"
           />
 
           {/* Botões */}
           <div className="flex gap-4">
             <CustomButton>
-              Download CV
               <IoMdDownload />
+              Download CV
             </CustomButton>
             <CustomButton>
-              GitHub
               <FaGithub />
+              GitHub
             </CustomButton>
           </div>
         </div>
