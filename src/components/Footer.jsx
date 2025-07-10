@@ -1,36 +1,39 @@
+// Footer.jsx (sem position fixed!)
 import React from "react";
-import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { IoLogoWhatsapp } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-800 text-white border-t">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 p-4">
-        <p className="text-sm text-center sm:text-left">
+    <footer className="bg-slate-900 text-white border-t border-slate-700">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 px-6 py-6">
+        <p className="text-sm text-center sm:text-left text-gray-400">
           &copy; {new Date().getFullYear()} Todos os direitos reservados.
         </p>
         <div className="flex gap-6">
           <a
-            href="https://www.instagram.com/thiagooaraujo.dev/"
+            href="..."
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-pink-400 transition"
           >
-            <IoLogoInstagram size={20} />
+            <IoLogoInstagram size={22} />
           </a>
           <a
-            href="https://www.linkedin.com/in/thiagooaraujo/"
+            href="..."
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-blue-400 transition"
           >
-            <IoLogoLinkedin size={20} />
+            <IoLogoLinkedin size={22} />
           </a>
           <a
-            href="https://wa.me/5583996485508"
+            href="..."
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-green-400 transition"
           >
-            <IoLogoWhatsapp size={20} />
+            <IoLogoWhatsapp size={22} />
           </a>
         </div>
       </div>
