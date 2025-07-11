@@ -4,6 +4,7 @@ import Hero from "./pages/Hero";
 import Habilidades from "./pages/Habilidades";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Contato from "./pages/Contato";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/skills" element={<Habilidades />} />
+          <Route path="/contact" element={<Contato />} />
+          <Route path="/projects" element={<Habilidades />} />
         </Routes>
         <Footer />
       </div>
