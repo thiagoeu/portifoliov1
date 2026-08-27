@@ -1,51 +1,76 @@
-// Footer.jsx (sem position fixed!)
-import React from "react";
-import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io"; // Ícones do Instagram e WhatsApp
-import { IoLogoLinkedin } from "react-icons/io5"; // Ícone do LinkedIn
-import { Link } from "react-router-dom"; // Link para rotas externas (mesmo usando to=)
+import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    // Rodapé com borda superior e fundo escuro
-    <footer className="border-t border-slate-700 bg-slate-900 text-white">
-      {/* Container centralizado com layout responsivo */}
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row">
-        {/* Texto de direitos autorais */}
-        <p className="text-center text-sm text-gray-400 sm:text-left">
-          &copy; {new Date().getFullYear()} Todos os direitos reservados.
-        </p>
-
-        {/* Ícones de redes sociais com hover colorido */}
-        <div className="flex gap-6">
-          {/* Instagram */}
-          <Link
-            to={"https://www.instagram.com/thiagoeu"}
-            target="_blank"
-            className="transition hover:text-pink-400"
-          >
-            <IoLogoInstagram size={22} />
-          </Link>
-
-          {/* LinkedIn */}
-          <Link
-            to={"https://www.linkedin.com/in/thiago-araujo-946183227/"}
-            target="_blank"
-            className="transition hover:text-blue-400"
-          >
-            <IoLogoLinkedin size={22} />
-          </Link>
-
-          {/* WhatsApp com mensagem pré-preenchida */}
-          <Link
-            to={
-              "https://wa.me/5583996485508?text=Gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os"
-            }
-            target="_blank"
-            className="transition hover:text-green-400"
-          >
-            <IoLogoWhatsapp size={22} />
-          </Link>
+    <footer className="w-full bg-slate-950 border-t border-slate-900 text-slate-400 py-12 relative z-10">
+      <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Left Side Info */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs font-mono text-emerald-400 font-semibold tracking-wide uppercase">
+              Disponível para Projetos & Oportunidades
+            </span>
+          </div>
+          <h3 className="text-xl font-bold text-white tracking-tight">
+            Thiago Araujo
+          </h3>
+          <p className="text-xs text-slate-400 max-w-md">
+            Engenharia da Computação | Desenvolvedor Full Stack especializado em Node.js, React, Go, Python e Cloud.
+          </p>
         </div>
+
+        {/* Social Icons */}
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/thiagoeu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-cyan-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
+            title="GitHub"
+          >
+            <FaGithub size={18} />
+          </a>
+          <a
+            href="mailto:araujo.thiago1051@gmail.com"
+            className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-cyan-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
+            title="Email"
+          >
+            <FaEnvelope size={18} />
+          </a>
+          <a
+            href="https://wa.me/5583996485508"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-emerald-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
+            title="WhatsApp"
+          >
+            <FaWhatsapp size={18} />
+          </a>
+          <a
+            href="https://instagram.com/thiagoeu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-pink-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
+            title="Instagram"
+          >
+            <FaInstagram size={18} />
+          </a>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="mx-auto max-w-6xl px-6 mt-8 pt-6 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <p>© {currentYear} Thiago Araujo. Todos os direitos reservados.</p>
+        <p className="font-mono text-[11px]">
+          Construído com <span className="text-cyan-400">React</span> & <span className="text-purple-400">Tailwind CSS</span>
+        </p>
       </div>
     </footer>
   );
