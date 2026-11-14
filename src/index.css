@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --color-brand-bg: #070b14;
   --color-brand-surface: #0e1626;
   --color-brand-surface-card: rgba(14, 22, 38, 0.75);
@@ -89,29 +89,4 @@
   border-color: rgba(56, 189, 248, 0.4);
   transform: translateY(-4px);
   box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.25);
-}
-
-.pixel-border {
-  box-shadow: 
-    -4px 0 0 0 var(--color-primary-400),
-    4px 0 0 0 var(--color-primary-400),
-    0 -4px 0 0 var(--color-primary-400),
-    0 4px 0 0 var(--color-primary-400);
-}
-
-.crt-scanlines {
-  position: relative;
-  overflow: hidden;
-}
-
-.crt-scanlines::after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
-  background-size: 100% 4px;
-  z-index: 20;
-  pointer-events: none;
-  opacity: 0.6;
 }

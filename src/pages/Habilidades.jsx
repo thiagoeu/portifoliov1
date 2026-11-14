@@ -3,8 +3,15 @@ import categorizedSkills from "../data/categorizedSkills.jsx";
 import { FaCode } from "react-icons/fa";
 import SectionHeader from "../components/ui/SectionHeader.jsx";
 import CategoryFilterBar from "../components/ui/CategoryFilterBar.jsx";
+import { useDocumentHead } from "../hooks/useDocumentHead";
 
 const Habilidades = () => {
+  useDocumentHead({
+    title: "Habilidades Técnicas",
+    description:
+      "Conheça a stack tecnológica de Thiago Araujo: React, Node.js, NestJS, Go, Python, Docker, PostgreSQL, MongoDB e C++ para sistemas embarcados.",
+  });
+
   const [activeCategory, setActiveCategory] = useState("Todos");
 
   const categories = useMemo(

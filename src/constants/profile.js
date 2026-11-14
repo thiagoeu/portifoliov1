@@ -1,7 +1,7 @@
 export const PROFILE = Object.freeze({
   name: "Thiago Araujo",
-  shortRole: "Full Stack Dev",
-  badgeTitle: "Engenheiro da Computação & Dev Full Stack",
+  shortRole: "Desenvolvedor Full Stack",
+  badgeTitle: "Desenvolvedor Full Stack",
   footerBio:
     "Engenharia da Computação | Desenvolvedor Full Stack especializado em Node.js, React, Go, Python e Cloud.",
   githubUsername: "thiagoeu",
@@ -23,7 +23,7 @@ export const PROFILE = Object.freeze({
     "Criador de Soluções IoT",
   ]),
   metrics: Object.freeze([
-    { value: "100%", label: "Código Limpo", colorClass: "text-sky-400" },
+    { value: "IA & Agentes", label: "LLMs & Dados", colorClass: "text-sky-400" },
     { value: "Full Stack", label: "End-to-End", colorClass: "text-teal-400" },
     { value: "API + IoT", label: "Sistemas", colorClass: "text-emerald-400" },
   ]),

@@ -1,4 +1,4 @@
-import PixelAvatar from "../components/PixelAvatar.jsx";
+import HeroProfileCard from "../components/HeroProfileCard.jsx";
 import { IoMdDownload } from "react-icons/io";
 import {
   FaGithub,
@@ -10,8 +10,15 @@ import {
 import { Link } from "react-router-dom";
 import { PROFILE } from "../constants/profile";
 import { useTypewriter } from "../hooks/useTypewriter";
+import { useDocumentHead } from "../hooks/useDocumentHead";
 
 const Hero = () => {
+  useDocumentHead({
+    title: "Início",
+    description:
+      "Portfólio profissional de Thiago Araujo, Engenheiro da Computação e Desenvolvedor Full Stack especializado em React, Node.js, Go, Python e IoT.",
+  });
+
   const displayText = useTypewriter(PROFILE.roles, {
     typingSpeed: 100,
     deletingSpeed: 50,
@@ -65,14 +72,14 @@ const Hero = () => {
             {PROFILE.metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="glass-card p-3 rounded-xl border border-slate-800 text-center"
+                className="glass-card p-3 rounded-xl border border-slate-800 text-center flex flex-col justify-center"
               >
                 <span
-                  className={`block text-2xl font-bold ${metric.colorClass} font-mono`}
+                  className={`block text-lg sm:text-xl font-bold ${metric.colorClass} font-mono tracking-tight whitespace-nowrap`}
                 >
                   {metric.value}
                 </span>
-                <span className="text-[11px] text-slate-400 uppercase tracking-wider">
+                <span className="text-[10px] sm:text-[11px] text-slate-400 uppercase tracking-wider mt-0.5">
                   {metric.label}
                 </span>
               </div>
@@ -124,9 +131,9 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side Pixel Avatar Component */}
-        <div className="lg:w-5/12 flex items-center justify-center z-10">
-          <PixelAvatar />
+        {/* Right Side Hero Profile Card Component */}
+        <div className="lg:w-5/12 flex items-center justify-center z-10 w-full">
+          <HeroProfileCard />
         </div>
       </div>
     </section>

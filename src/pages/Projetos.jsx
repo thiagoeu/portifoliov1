@@ -10,6 +10,7 @@ import {
   FaTag,
 } from "react-icons/fa";
 import { useGithubRepos } from "../hooks/useGithubRepos";
+import { useDocumentHead } from "../hooks/useDocumentHead";
 import staticProjects from "../data/projects.jsx";
 import { PROFILE, PROJECT_CATEGORIES } from "../constants/profile";
 import {
@@ -21,6 +22,12 @@ import SectionHeader from "../components/ui/SectionHeader.jsx";
 import CategoryFilterBar from "../components/ui/CategoryFilterBar.jsx";
 
 const Projetos = () => {
+  useDocumentHead({
+    title: "Projetos em Destaque",
+    description:
+      "Explore projetos e repositórios de Thiago Araujo nas áreas de Microsserviços, Full Stack, Agentes de IA e Sistemas Embarcados IoT.",
+  });
+
   const { repos, userProfile, loading } = useGithubRepos(PROFILE.githubUsername);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("Todos");

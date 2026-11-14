@@ -11,8 +11,15 @@ import {
 } from "react-icons/fa";
 import { PROFILE } from "../constants/profile";
 import SectionHeader from "../components/ui/SectionHeader.jsx";
+import { useDocumentHead } from "../hooks/useDocumentHead";
 
 const Contato = () => {
+  useDocumentHead({
+    title: "Contato",
+    description:
+      "Entre em contato com Thiago Araujo para propostas de desenvolvimento de software, consultoria técnica ou projetos de engenharia.",
+  });
+
   const [copiedField, setCopiedField] = useState(null);
   const [customMsg, setCustomMsg] = useState("");
   const [senderName, setSenderName] = useState("");
