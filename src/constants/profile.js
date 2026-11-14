@@ -1,0 +1,46 @@
+export const PROFILE = Object.freeze({
+  name: "Thiago Araujo",
+  shortRole: "Full Stack Dev",
+  badgeTitle: "Engenheiro da Computação & Dev Full Stack",
+  footerBio:
+    "Engenharia da Computação | Desenvolvedor Full Stack especializado em Node.js, React, Go, Python e Cloud.",
+  githubUsername: "thiagoeu",
+  email: "araujo.thiago1051@gmail.com",
+  phoneDisplay: "+55 (83) 99648-5508",
+  phoneRaw: "+5583996485508",
+  whatsappNumber: "5583996485508",
+  urls: Object.freeze({
+    github: "https://github.com/thiagoeu",
+    whatsapp: "https://wa.me/5583996485508",
+    instagram: "https://instagram.com/thiagoeu",
+    cv: "https://drive.google.com/file/d/1rL_BwkCHBXHYMH-bR-eE-aczHoJ0yk1z/view?usp=sharing",
+  }),
+  roles: Object.freeze([
+    "Desenvolvedor Full Stack",
+    "Engenheiro da Computação",
+    "Especialista Node.js & React",
+    "Desenvolvedor Go & Python",
+    "Criador de Soluções IoT",
+  ]),
+  metrics: Object.freeze([
+    { value: "100%", label: "Código Limpo", colorClass: "text-sky-400" },
+    { value: "Full Stack", label: "End-to-End", colorClass: "text-teal-400" },
+    { value: "API + IoT", label: "Sistemas", colorClass: "text-emerald-400" },
+  ]),
+});
+
+export const NAV_LINKS = Object.freeze([
+  { name: "Home", path: "/" },
+  { name: "Habilidades", path: "/skills" },
+  { name: "Projetos", path: "/projects" },
+  { name: "Contato", path: "/contact" },
+]);
+
+export const PROJECT_CATEGORIES = Object.freeze([
+  "Todos",
+  "Destaques",
+  "Full Stack",
+  "Backend",
+  "Frontend",
+  "Analise de dados e IA",
+]);

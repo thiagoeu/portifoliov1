@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaGamepad, FaUser } from "react-icons/fa";
 import heroImg from "../assets/hero.png";
+import { PROFILE } from "../constants/profile";
 
 const PixelAvatar = () => {
   const [isRetroMode, setIsRetroMode] = useState(false);
@@ -11,8 +12,8 @@ const PixelAvatar = () => {
       <div
         className={`absolute -inset-2 rounded-full transition-all duration-700 blur-lg ${
           isRetroMode
-            ? "bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-500 opacity-90 animate-pulse"
-            : "bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 opacity-60 group-hover:opacity-100"
+            ? "bg-gradient-to-r from-emerald-400 via-teal-400 to-sky-500 opacity-90 animate-pulse"
+            : "bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 opacity-60 group-hover:opacity-100"
         }`}
       ></div>
 
@@ -20,8 +21,14 @@ const PixelAvatar = () => {
       <div className="relative flex flex-col items-center">
         {/* Status Tag */}
         <div className="mb-4 flex items-center gap-2 rounded-full bg-slate-950/90 px-3.5 py-1 text-xs font-mono text-cyan-400 border border-cyan-500/30 backdrop-blur-md shadow-lg">
-          <span className={`inline-block w-2 h-2 rounded-full ${isRetroMode ? "bg-emerald-400 animate-ping" : "bg-cyan-400"}`}></span>
-          <span>{isRetroMode ? "MOLDURA RETRO PIXEL 8-BIT" : "PERFIL HD HIGH-TECH"}</span>
+          <span
+            className={`inline-block w-2 h-2 rounded-full ${
+              isRetroMode ? "bg-emerald-400 animate-ping" : "bg-cyan-400"
+            }`}
+          ></span>
+          <span>
+            {isRetroMode ? "MOLDURA RETRO PIXEL 8-BIT" : "PERFIL HD HIGH-TECH"}
+          </span>
         </div>
 
         {/* Circular Avatar Wrapper */}
@@ -35,7 +42,7 @@ const PixelAvatar = () => {
           {/* Developer Photo */}
           <img
             src={heroImg}
-            alt="Thiago Araujo"
+            alt={PROFILE.name}
             className={`w-full h-full object-cover object-center transition-all duration-500 ${
               isRetroMode ? "contrast-110 saturate-125 crt-scanlines" : ""
             }`}
@@ -57,7 +64,9 @@ const PixelAvatar = () => {
 
         {/* Interactive Toggle Button */}
         <button
-          onClick={() => setIsRetroMode(!isRetroMode)}
+          type="button"
+          aria-pressed={isRetroMode}
+          onClick={() => setIsRetroMode((prev) => !prev)}
           className="mt-6 flex items-center gap-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 px-4 py-2.5 text-xs font-semibold text-slate-200 border border-slate-700 hover:border-cyan-400 transition-all duration-300 shadow-xl hover:shadow-cyan-500/20 active:scale-95"
         >
           {isRetroMode ? (

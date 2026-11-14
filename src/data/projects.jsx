@@ -1,4 +1,4 @@
-import { IoLogoJavascript, IoLogoPython, IoLogoReact, IoLogoNodejs, IoTerminalSharp } from "react-icons/io5";
+import { IoLogoJavascript, IoLogoPython, IoLogoReact, IoLogoNodejs } from "react-icons/io5";
 import { FaLayerGroup } from "react-icons/fa";
 
 const projects = [

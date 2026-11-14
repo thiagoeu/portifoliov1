@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaGithub, FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { PROFILE } from "../constants/profile";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,44 +19,46 @@ const Footer = () => {
             </span>
           </div>
           <h3 className="text-xl font-bold text-white tracking-tight">
-            Thiago Araujo
+            {PROFILE.name}
           </h3>
-          <p className="text-xs text-slate-400 max-w-md">
-            Engenharia da Computação | Desenvolvedor Full Stack especializado em Node.js, React, Go, Python e Cloud.
-          </p>
+          <p className="text-xs text-slate-400 max-w-md">{PROFILE.footerBio}</p>
         </div>
 
         {/* Social Icons */}
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/thiagoeu"
+            href={PROFILE.urls.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-cyan-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
             title="GitHub"
           >
             <FaGithub size={18} />
           </a>
           <a
-            href="mailto:araujo.thiago1051@gmail.com"
+            href={`mailto:${PROFILE.email}`}
+            aria-label="Enviar E-mail"
             className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-cyan-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
             title="Email"
           >
             <FaEnvelope size={18} />
           </a>
           <a
-            href="https://wa.me/5583996485508"
+            href={PROFILE.urls.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="WhatsApp"
             className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-emerald-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
             title="WhatsApp"
           >
             <FaWhatsapp size={18} />
           </a>
           <a
-            href="https://instagram.com/thiagoeu"
+            href={PROFILE.urls.instagram}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Instagram"
             className="p-3 rounded-full bg-slate-900 text-slate-300 hover:text-pink-400 hover:bg-slate-800 border border-slate-800 transition-all duration-300 hover:scale-110"
             title="Instagram"
           >
@@ -67,9 +69,10 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="mx-auto max-w-6xl px-6 mt-8 pt-6 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-        <p>© {currentYear} Thiago Araujo. Todos os direitos reservados.</p>
+        <p>© {currentYear} {PROFILE.name}. Todos os direitos reservados.</p>
         <p className="font-mono text-[11px]">
-          Construído com <span className="text-cyan-400">React</span> & <span className="text-purple-400">Tailwind CSS</span>
+          Construído com <span className="text-cyan-400">React</span> &{" "}
+          <span className="text-emerald-400">Tailwind CSS</span>
         </p>
       </div>
     </footer>
