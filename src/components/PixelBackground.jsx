@@ -20,7 +20,7 @@ const PixelBackground = () => {
     // Particle setup
     const particles = [];
     const particleCount = 40;
-    const colors = ["rgba(56, 189, 248, 0.4)", "rgba(168, 85, 247, 0.3)", "rgba(52, 211, 153, 0.3)"];
+    const colors = ["rgba(56, 189, 248, 0.4)", "rgba(16, 185, 129, 0.3)", "rgba(45, 212, 191, 0.3)"];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
