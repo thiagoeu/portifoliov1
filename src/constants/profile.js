@@ -40,7 +40,8 @@ export const PROJECT_CATEGORIES = Object.freeze([
   "Todos",
   "Destaques",
   "Full Stack",
-  "Backend",
-  "Frontend",
-  "Analise de dados e IA",
+  "Backend & Microsserviços",
+  "Frontend & Mobile",
+  "IA & Ciência de Dados",
+  "Sistemas Embarcados & IoT",
 ]);

@@ -43,7 +43,7 @@ const Projetos = () => {
           badgeText="Sincronização em Tempo Real com GitHub"
           titlePrefix="Meus"
           titleHighlight="Projetos"
-          description="Repositórios e projetos práticos com classificação por categoria (Full Stack, Backend, Frontend, IA & Dados)."
+          description="Repositórios e projetos práticos classificados por área de especialização da Engenharia de Software."
         >
           {userProfile && (
             <div className="inline-flex items-center gap-6 glass-card px-5 py-2.5 rounded-2xl border border-slate-800 text-xs font-mono text-slate-300">
