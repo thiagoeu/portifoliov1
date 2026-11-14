@@ -1,47 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoMdDownload } from "react-icons/io";
-import { FaGithub, FaWhatsapp, FaEnvelope, FaInstagram, FaCopy, FaCheck, FaPaperPlane } from "react-icons/fa";
-import CustomButton from "../components/CustomButton.jsx";
-import contatoilustration from "../assets/contact.png";
+import {
+  FaGithub,
+  FaWhatsapp,
+  FaEnvelope,
+  FaInstagram,
+  FaCopy,
+  FaCheck,
+  FaPaperPlane,
+} from "react-icons/fa";
+import { PROFILE } from "../constants/profile";
+import SectionHeader from "../components/ui/SectionHeader.jsx";
 
 const Contato = () => {
   const [copiedField, setCopiedField] = useState(null);
   const [customMsg, setCustomMsg] = useState("");
   const [senderName, setSenderName] = useState("");
+  const copyTimerRef = useRef(null);
 
-  const emailAddress = "araujo.thiago1051@gmail.com";
-  const phoneNumber = "+55 (83) 99648-5508";
+  useEffect(() => {
+    return () => {
+      if (copyTimerRef.current) {
+        clearTimeout(copyTimerRef.current);
+      }
+    };
+  }, []);
 
   const handleCopy = (text, fieldName) => {
     navigator.clipboard.writeText(text);
     setCopiedField(fieldName);
-    setTimeout(() => setCopiedField(null), 2000);
+    if (copyTimerRef.current) {
+      clearTimeout(copyTimerRef.current);
+    }
+    copyTimerRef.current = setTimeout(() => setCopiedField(null), 2000);
   };
 
   const handleSendWhatsApp = (e) => {
     e.preventDefault();
     const formattedText = encodeURIComponent(
-      `Olá Thiago! Meu nome é ${senderName || "um visitante do portfólio"}.\n${customMsg || "Gostaria de conversar sobre um projeto ou oportunidade!"}`
+      `Olá Thiago! Meu nome é ${senderName || "um visitante do portfólio"}.\n${
+        customMsg || "Gostaria de conversar sobre um projeto ou oportunidade!"
+      }`
     );
-    window.open(`https://wa.me/5583996485508?text=${formattedText}`, "_blank");
+    window.open(
+      `${PROFILE.urls.whatsapp}?text=${formattedText}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
     <section className="relative min-h-[calc(100vh-80px)] w-full py-16 px-6 flex items-center justify-center">
       <div className="mx-auto max-w-6xl w-full space-y-12">
-        {/* Header Title */}
-        <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full bg-cyan-950/60 px-4 py-1.5 text-xs font-mono text-cyan-400 border border-cyan-500/30">
-            <FaPaperPlane size={14} />
-            <span>Vamos Conversar</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Entre em <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Contato</span>
-          </h1>
-          <p className="text-slate-400 text-sm sm:text-base">
-            Estou disponível para novas oportunidades de trabalho, projetos de consultoria, freelances e parcerias em tecnologia.
-          </p>
-        </div>
+        <SectionHeader
+          badgeIcon={FaPaperPlane}
+          badgeText="Vamos Conversar"
+          titlePrefix="Entre em"
+          titleHighlight="Contato"
+          description="Estou disponível para novas oportunidades de trabalho, projetos de consultoria, freelances e parcerias em tecnologia."
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Left Column: Direct Contacts & Copy Buttons */}
@@ -61,19 +78,25 @@ const Contato = () => {
                     E-mail Principal
                   </span>
                   <a
-                    href={`mailto:${emailAddress}`}
+                    href={`mailto:${PROFILE.email}`}
                     className="text-sm sm:text-base font-semibold text-white hover:text-cyan-300 transition-colors"
                   >
-                    {emailAddress}
+                    {PROFILE.email}
                   </a>
                 </div>
               </div>
               <button
-                onClick={() => handleCopy(emailAddress, "email")}
+                type="button"
+                aria-label="Copiar endereço de e-mail"
+                onClick={() => handleCopy(PROFILE.email, "email")}
                 className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-cyan-400 border border-slate-800 transition-all"
                 title="Copiar E-mail"
               >
-                {copiedField === "email" ? <FaCheck className="text-emerald-400" size={16} /> : <FaCopy size={16} />}
+                {copiedField === "email" ? (
+                  <FaCheck className="text-emerald-400" size={16} />
+                ) : (
+                  <FaCopy size={16} />
+                )}
               </button>
             </div>
 
@@ -88,49 +111,69 @@ const Contato = () => {
                     WhatsApp / Telefone
                   </span>
                   <a
-                    href="https://wa.me/5583996485508"
+                    href={PROFILE.urls.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm sm:text-base font-semibold text-white hover:text-emerald-300 transition-colors"
                   >
-                    {phoneNumber}
+                    {PROFILE.phoneDisplay}
                   </a>
                 </div>
               </div>
               <button
-                onClick={() => handleCopy("+5583996485508", "phone")}
+                type="button"
+                aria-label="Copiar número de telefone"
+                onClick={() => handleCopy(PROFILE.phoneRaw, "phone")}
                 className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-emerald-400 border border-slate-800 transition-all"
                 title="Copiar Número"
               >
-                {copiedField === "phone" ? <FaCheck className="text-emerald-400" size={16} /> : <FaCopy size={16} />}
+                {copiedField === "phone" ? (
+                  <FaCheck className="text-emerald-400" size={16} />
+                ) : (
+                  <FaCopy size={16} />
+                )}
               </button>
             </div>
 
             {/* Social Media Grid */}
             <div className="grid grid-cols-2 gap-4">
               <a
-                href="https://github.com/thiagoeu"
+                href={PROFILE.urls.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-card p-4 rounded-2xl border border-slate-800 flex items-center gap-3 hover:border-cyan-500/40 hover:bg-slate-900/90 transition-all group"
               >
-                <FaGithub size={22} className="text-slate-300 group-hover:text-cyan-400 transition-colors" />
+                <FaGithub
+                  size={22}
+                  className="text-slate-300 group-hover:text-cyan-400 transition-colors"
+                />
                 <div>
-                  <span className="text-xs font-bold text-white block">GitHub</span>
-                  <span className="text-[11px] text-slate-400">@thiagoeu</span>
+                  <span className="text-xs font-bold text-white block">
+                    GitHub
+                  </span>
+                  <span className="text-[11px] text-slate-400">
+                    @{PROFILE.githubUsername}
+                  </span>
                 </div>
               </a>
 
               <a
-                href="https://instagram.com/thiagoeu"
+                href={PROFILE.urls.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-card p-4 rounded-2xl border border-slate-800 flex items-center gap-3 hover:border-pink-500/40 hover:bg-slate-900/90 transition-all group"
               >
-                <FaInstagram size={22} className="text-slate-300 group-hover:text-pink-400 transition-colors" />
+                <FaInstagram
+                  size={22}
+                  className="text-slate-300 group-hover:text-pink-400 transition-colors"
+                />
                 <div>
-                  <span className="text-xs font-bold text-white block">Instagram</span>
-                  <span className="text-[11px] text-slate-400">@thiagoeu</span>
+                  <span className="text-xs font-bold text-white block">
+                    Instagram
+                  </span>
+                  <span className="text-[11px] text-slate-400">
+                    @{PROFILE.githubUsername}
+                  </span>
                 </div>
               </a>
             </div>
@@ -140,8 +183,8 @@ const Contato = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://drive.google.com/file/d/1rL_BwkCHBXHYMH-bR-eE-aczHoJ0yk1z/view?usp=sharing"
-                className="flex items-center justify-center gap-3 w-full rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 p-4 text-sm font-bold text-white shadow-lg shadow-cyan-500/20 hover:scale-[1.01] transition-transform"
+                href={PROFILE.urls.cv}
+                className="flex items-center justify-center gap-3 w-full rounded-2xl bg-gradient-to-r from-sky-500 to-emerald-600 p-4 text-sm font-bold text-white shadow-lg shadow-sky-500/20 hover:scale-[1.01] transition-transform"
               >
                 <IoMdDownload size={20} />
                 <span>Baixar Currículo Completo (CV PDF)</span>
@@ -156,16 +199,21 @@ const Contato = () => {
                 Enviar Mensagem Rápida
               </h2>
               <p className="text-xs text-slate-400">
-                Preencha os campos abaixo para iniciar uma conversa diretamente no meu WhatsApp.
+                Preencha os campos abaixo para iniciar uma conversa diretamente
+                no meu WhatsApp.
               </p>
             </div>
 
             <form onSubmit={handleSendWhatsApp} className="space-y-4">
               <div>
-                <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                <label
+                  htmlFor="sender-name"
+                  className="block text-xs font-mono text-slate-300 mb-1.5 uppercase cursor-pointer"
+                >
                   Seu Nome
                 </label>
                 <input
+                  id="sender-name"
                   type="text"
                   required
                   placeholder="Ex: Maria Silva"
@@ -176,10 +224,14 @@ const Contato = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
+                <label
+                  htmlFor="sender-message"
+                  className="block text-xs font-mono text-slate-300 mb-1.5 uppercase cursor-pointer"
+                >
                   Sua Mensagem
                 </label>
                 <textarea
+                  id="sender-message"
                   rows={4}
                   required
                   placeholder="Escreva sobre a oportunidade ou projeto que deseja propor..."
