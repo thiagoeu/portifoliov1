@@ -27,5 +27,8 @@ dist-ssr
 openspec/
 .agents/
 
+# Local Dev & Estudos
+dev/
+
 
 
