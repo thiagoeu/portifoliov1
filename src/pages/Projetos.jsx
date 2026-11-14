@@ -53,7 +53,7 @@ const Projetos = () => {
           description="Repositórios e projetos práticos classificados por área de especialização da Engenharia de Software."
         >
           {userProfile && (
-            <div className="inline-flex items-center gap-6 glass-card px-5 py-2.5 rounded-2xl border border-slate-800 text-xs font-mono text-slate-300">
+            <div className="inline-flex items-center gap-6 glass-card px-5 py-2.5 rounded-2xl border border-zinc-800 text-xs font-mono text-zinc-300">
               <span>
                 Repos:{" "}
                 <strong className="text-cyan-400">
@@ -77,11 +77,11 @@ const Projetos = () => {
         </SectionHeader>
 
         {/* Search & Filter Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl mx-auto bg-slate-900/80 p-4 rounded-2xl border border-slate-800 shadow-xl backdrop-blur-md">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl mx-auto bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 shadow-xl backdrop-blur-md">
           {/* Search Input */}
           <div className="relative w-full md:w-80">
             <FaSearch
-              className="absolute left-3.5 top-3.5 text-slate-400"
+              className="absolute left-3.5 top-3.5 text-zinc-400"
               size={14}
             />
             <input
@@ -91,7 +91,7 @@ const Projetos = () => {
               placeholder="Buscar por nome, tag ou tecnologia..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 text-slate-200 placeholder-slate-500 text-sm border border-slate-800 focus:outline-none focus:border-cyan-500 transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-950 text-zinc-200 placeholder-zinc-500 text-sm border border-zinc-800 focus:outline-none focus:border-blue-500 transition-colors"
             />
           </div>
 
@@ -107,7 +107,7 @@ const Projetos = () => {
 
         {/* Loading Indicator */}
         {loading && (
-          <div className="flex items-center justify-center py-16 gap-3 text-cyan-400 font-mono text-sm">
+          <div className="flex items-center justify-center py-16 gap-3 text-blue-400 font-mono text-sm">
             <FaSync className="animate-spin" size={18} />
             <span>Sincronizando repositórios do GitHub...</span>
           </div>
@@ -133,7 +133,7 @@ const Projetos = () => {
                       {project.category}
                     </span>
 
-                    <span className="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                    <span className="text-[11px] font-mono text-zinc-400 bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
                       {project.language || "Code"}
                     </span>
                   </div>
@@ -146,12 +146,12 @@ const Projetos = () => {
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
                   {project.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4 line-clamp-3">
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
@@ -160,7 +160,7 @@ const Projetos = () => {
                   {project.skills.slice(0, 6).map((skill) => (
                     <span
                       key={`${project.id}-${skill}`}
-                      className="text-[10px] font-mono bg-slate-900 text-slate-300 px-2 py-1 rounded border border-slate-800 hover:border-cyan-500/30 transition-colors"
+                      className="text-[10px] font-mono bg-zinc-900 text-zinc-300 px-2 py-1 rounded border border-zinc-800 hover:border-blue-500/30 transition-colors"
                     >
                       {skill}
                     </span>
@@ -169,15 +169,15 @@ const Projetos = () => {
               </div>
 
               {/* Action Footer */}
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
+              <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between gap-2">
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-xl bg-slate-900 hover:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-slate-200 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300"
+                    className="flex items-center gap-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 px-3.5 py-2 text-xs font-semibold text-zinc-200 border border-zinc-800 hover:border-blue-500/50 transition-all duration-300"
                   >
-                    <FaGithub size={14} className="text-slate-300" />
+                    <FaGithub size={14} className="text-zinc-300" />
                     <span>GitHub</span>
                   </a>
                 )}
@@ -187,14 +187,14 @@ const Projetos = () => {
                     href={project.deployUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 px-3.5 py-2 text-xs font-semibold text-white shadow-md shadow-emerald-500/20 transition-all duration-300"
+                    className="flex items-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 px-3.5 py-2 text-xs font-semibold text-white shadow-md shadow-blue-500/20 transition-all duration-300"
                   >
                     <FaRocket size={12} />
                     <span>Live Demo</span>
                     <FaExternalLinkAlt size={10} />
                   </a>
                 ) : (
-                  <span className="text-[10px] font-mono text-slate-400 italic">
+                  <span className="text-[10px] font-mono text-zinc-400 italic">
                     {project.updatedAt
                       ? `Atualizado: ${project.updatedAt}`
                       : "Repositório Git"}
@@ -207,8 +207,8 @@ const Projetos = () => {
 
         {/* Empty State */}
         {!loading && filteredProjects.length === 0 && (
-          <div className="text-center py-16 glass-card rounded-2xl border border-slate-800 space-y-3">
-            <p className="text-slate-400 text-base">
+          <div className="text-center py-16 glass-card rounded-2xl border border-zinc-800 space-y-3">
+            <p className="text-zinc-400 text-base">
               Nenhum projeto encontrado para o termo pesquisado.
             </p>
             <button

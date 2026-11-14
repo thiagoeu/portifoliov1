@@ -261,16 +261,16 @@ export const filterProjects = (projects = [], searchTerm = "", selectedFilter = 
 export const getCategoryBadgeStyle = (category) => {
   switch (category) {
     case "Full Stack":
-      return "bg-gradient-to-r from-sky-950 to-emerald-950 text-emerald-300 border-emerald-500/40 shadow-sm";
+      return "bg-blue-950/60 text-blue-300 border-blue-500/40 shadow-sm";
     case "Backend & Microsserviços":
-      return "bg-slate-900 text-sky-300 border-sky-500/40";
+      return "bg-zinc-900 text-sky-300 border-sky-500/30";
     case "Frontend & Mobile":
-      return "bg-cyan-950/80 text-cyan-300 border-cyan-500/40";
+      return "bg-zinc-900 text-zinc-200 border-zinc-700";
     case "IA & Ciência de Dados":
-      return "bg-teal-950/80 text-teal-300 border-teal-500/40";
+      return "bg-zinc-900 text-blue-200 border-blue-500/30";
     case "Sistemas Embarcados & IoT":
-      return "bg-emerald-950/80 text-emerald-300 border-emerald-500/40";
+      return "bg-blue-900/40 text-blue-300 border-blue-500/30";
     default:
-      return "bg-slate-900 text-slate-300 border-slate-700";
+      return "bg-zinc-900 text-zinc-300 border-zinc-700";
   }
 };

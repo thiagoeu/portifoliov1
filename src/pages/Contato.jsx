@@ -70,18 +70,18 @@ const Contato = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Left Column: Direct Contacts & Copy Buttons */}
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-white tracking-wide border-b border-slate-800 pb-3">
+            <h2 className="text-xl font-bold text-white tracking-wide border-b border-zinc-800 pb-3">
               Canais Diretos de Comunicação
             </h2>
 
             {/* Email Card */}
-            <div className="glass-card p-5 rounded-2xl border border-slate-800 flex items-center justify-between gap-4 group hover:border-cyan-500/40 transition-all">
+            <div className="glass-card p-5 rounded-2xl border border-zinc-800 flex items-center justify-between gap-4 group hover:border-cyan-500/40 transition-all">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-slate-900 text-cyan-400 border border-slate-800">
+                <div className="p-3 rounded-xl bg-zinc-900 text-cyan-400 border border-zinc-800">
                   <FaEnvelope size={20} />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">
+                  <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block">
                     E-mail Principal
                   </span>
                   <a
@@ -96,11 +96,11 @@ const Contato = () => {
                 type="button"
                 aria-label="Copiar endereço de e-mail"
                 onClick={() => handleCopy(PROFILE.email, "email")}
-                className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-cyan-400 border border-slate-800 transition-all"
+                className="p-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-blue-400 border border-zinc-800 transition-all"
                 title="Copiar E-mail"
               >
                 {copiedField === "email" ? (
-                  <FaCheck className="text-emerald-400" size={16} />
+                  <FaCheck className="text-blue-400" size={16} />
                 ) : (
                   <FaCopy size={16} />
                 )}
@@ -108,20 +108,20 @@ const Contato = () => {
             </div>
 
             {/* WhatsApp Card */}
-            <div className="glass-card p-5 rounded-2xl border border-slate-800 flex items-center justify-between gap-4 group hover:border-emerald-500/40 transition-all">
+            <div className="glass-card p-5 rounded-2xl border border-zinc-800 flex items-center justify-between gap-4 group hover:border-blue-500/40 transition-all">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-slate-900 text-emerald-400 border border-slate-800">
+                <div className="p-3 rounded-xl bg-zinc-900 text-blue-400 border border-zinc-800">
                   <FaWhatsapp size={20} />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">
+                  <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block">
                     WhatsApp / Telefone
                   </span>
                   <a
                     href={PROFILE.urls.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm sm:text-base font-semibold text-white hover:text-emerald-300 transition-colors"
+                    className="text-sm sm:text-base font-semibold text-white hover:text-blue-300 transition-colors"
                   >
                     {PROFILE.phoneDisplay}
                   </a>
@@ -131,11 +131,11 @@ const Contato = () => {
                 type="button"
                 aria-label="Copiar número de telefone"
                 onClick={() => handleCopy(PROFILE.phoneRaw, "phone")}
-                className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-emerald-400 border border-slate-800 transition-all"
+                className="p-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-blue-400 border border-zinc-800 transition-all"
                 title="Copiar Número"
               >
                 {copiedField === "phone" ? (
-                  <FaCheck className="text-emerald-400" size={16} />
+                  <FaCheck className="text-blue-400" size={16} />
                 ) : (
                   <FaCopy size={16} />
                 )}
@@ -148,17 +148,17 @@ const Contato = () => {
                 href={PROFILE.urls.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card p-4 rounded-2xl border border-slate-800 flex items-center gap-3 hover:border-cyan-500/40 hover:bg-slate-900/90 transition-all group"
+                className="glass-card p-4 rounded-2xl border border-zinc-800 flex items-center gap-3 hover:border-blue-500/40 hover:bg-zinc-900/90 transition-all group"
               >
                 <FaGithub
                   size={22}
-                  className="text-slate-300 group-hover:text-cyan-400 transition-colors"
+                  className="text-zinc-300 group-hover:text-blue-400 transition-colors"
                 />
                 <div>
                   <span className="text-xs font-bold text-white block">
                     GitHub
                   </span>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="text-[11px] text-zinc-400">
                     @{PROFILE.githubUsername}
                   </span>
                 </div>
@@ -168,17 +168,17 @@ const Contato = () => {
                 href={PROFILE.urls.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card p-4 rounded-2xl border border-slate-800 flex items-center gap-3 hover:border-pink-500/40 hover:bg-slate-900/90 transition-all group"
+                className="glass-card p-4 rounded-2xl border border-zinc-800 flex items-center gap-3 hover:border-blue-500/40 hover:bg-zinc-900/90 transition-all group"
               >
                 <FaInstagram
                   size={22}
-                  className="text-slate-300 group-hover:text-pink-400 transition-colors"
+                  className="text-zinc-300 group-hover:text-blue-400 transition-colors"
                 />
                 <div>
                   <span className="text-xs font-bold text-white block">
                     Instagram
                   </span>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="text-[11px] text-zinc-400">
                     @{PROFILE.githubUsername}
                   </span>
                 </div>
@@ -191,7 +191,7 @@ const Contato = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={PROFILE.urls.cv}
-                className="flex items-center justify-center gap-3 w-full rounded-2xl bg-gradient-to-r from-sky-500 to-emerald-600 p-4 text-sm font-bold text-white shadow-lg shadow-sky-500/20 hover:scale-[1.01] transition-transform"
+                className="flex items-center justify-center gap-3 w-full rounded-2xl bg-blue-600 hover:bg-blue-500 p-4 text-sm font-bold text-white shadow-lg shadow-blue-600/20 hover:scale-[1.01] transition-all"
               >
                 <IoMdDownload size={20} />
                 <span>Baixar Currículo Completo (CV PDF)</span>
@@ -200,12 +200,12 @@ const Contato = () => {
           </div>
 
           {/* Right Column: Quick Message Generator (WhatsApp Direct) */}
-          <div className="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+          <div className="glass-card p-6 sm:p-8 rounded-3xl border border-zinc-800 space-y-6">
             <div>
               <h2 className="text-xl font-bold text-white tracking-wide mb-1">
                 Enviar Mensagem Rápida
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-zinc-400">
                 Preencha os campos abaixo para iniciar uma conversa diretamente
                 no meu WhatsApp.
               </p>
@@ -215,7 +215,7 @@ const Contato = () => {
               <div>
                 <label
                   htmlFor="sender-name"
-                  className="block text-xs font-mono text-slate-300 mb-1.5 uppercase cursor-pointer"
+                  className="block text-xs font-mono text-zinc-300 mb-1.5 uppercase cursor-pointer"
                 >
                   Seu Nome
                 </label>
@@ -226,14 +226,14 @@ const Contato = () => {
                   placeholder="Ex: Maria Silva"
                   value={senderName}
                   onChange={(e) => setSenderName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 text-slate-200 placeholder-slate-600 text-sm border border-slate-800 focus:outline-none focus:border-cyan-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-950 text-zinc-200 placeholder-zinc-600 text-sm border border-zinc-800 focus:outline-none focus:border-blue-500 transition-colors"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="sender-message"
-                  className="block text-xs font-mono text-slate-300 mb-1.5 uppercase cursor-pointer"
+                  className="block text-xs font-mono text-zinc-300 mb-1.5 uppercase cursor-pointer"
                 >
                   Sua Mensagem
                 </label>
@@ -244,13 +244,13 @@ const Contato = () => {
                   placeholder="Escreva sobre a oportunidade ou projeto que deseja propor..."
                   value={customMsg}
                   onChange={(e) => setCustomMsg(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 text-slate-200 placeholder-slate-600 text-sm border border-slate-800 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-zinc-950 text-zinc-200 placeholder-zinc-600 text-sm border border-zinc-800 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/25 transition-all duration-300 active:scale-95"
+                className="flex items-center justify-center gap-2 w-full rounded-xl bg-blue-600 hover:bg-blue-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 active:scale-95"
               >
                 <FaWhatsapp size={18} />
                 <span>Enviar pelo WhatsApp</span>

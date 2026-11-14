@@ -51,12 +51,12 @@ const Habilidades = () => {
         <div className="space-y-12">
           {filteredCategories.map((category) => (
             <div key={category.title} className="space-y-6">
-              <div className="flex items-center gap-3 border-b border-slate-800/80 pb-3">
-                <div className="h-2 w-2 rounded-full bg-cyan-400"></div>
+              <div className="flex items-center gap-3 border-b border-zinc-800/80 pb-3">
+                <div className="h-2 w-2 rounded-full bg-blue-500"></div>
                 <h2 className="text-xl font-bold text-white tracking-wide">
                   {category.title}
                 </h2>
-                <span className="text-xs font-mono text-slate-400 bg-slate-900 px-2.5 py-1 rounded-full border border-slate-800">
+                <span className="text-xs font-mono text-zinc-400 bg-zinc-900 px-2.5 py-1 rounded-full border border-zinc-800">
                   {category.items.length} itens
                 </span>
               </div>
@@ -68,26 +68,26 @@ const Habilidades = () => {
                     className="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between group relative overflow-hidden"
                   >
                     {/* Top Glow bar on hover */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                     <div>
                       {/* Skill Icon & Name */}
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-xl bg-slate-900/90 text-cyan-400 border border-slate-800 group-hover:border-cyan-500/40 group-hover:text-cyan-300 group-hover:scale-110 transition-all duration-300 shadow-md">
+                        <div className="p-3 rounded-xl bg-zinc-900/90 text-blue-400 border border-zinc-800 group-hover:border-blue-500/40 group-hover:text-blue-300 group-hover:scale-110 transition-all duration-300 shadow-md">
                           {skill.icon}
                         </div>
                         <div>
-                          <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                          <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
                             {skill.name}
                           </h3>
-                          <span className="text-[11px] font-mono text-emerald-400">
+                          <span className="text-[11px] font-mono text-blue-400/90">
                             Prática & Produção
                           </span>
                         </div>
                       </div>
 
                       {/* Description */}
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                         {skill.description}
                       </p>
                     </div>

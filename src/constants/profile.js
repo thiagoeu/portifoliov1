@@ -23,9 +23,9 @@ export const PROFILE = Object.freeze({
     "Criador de Soluções IoT",
   ]),
   metrics: Object.freeze([
-    { value: "IA & Agentes", label: "LLMs & Dados", colorClass: "text-sky-400" },
-    { value: "Full Stack", label: "End-to-End", colorClass: "text-teal-400" },
-    { value: "API + IoT", label: "Sistemas", colorClass: "text-emerald-400" },
+    { value: "IA & Agentes", label: "LLMs & Dados", colorClass: "text-blue-400" },
+    { value: "Full Stack", label: "End-to-End", colorClass: "text-white" },
+    { value: "API + IoT", label: "Sistemas", colorClass: "text-blue-400" },
   ]),
 });
 
