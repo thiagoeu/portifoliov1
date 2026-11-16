@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <!-- Background Squircle com contorno sutil neutro -->
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="7.5" fill="#09090b" stroke="#27272a" stroke-width="1.5" />
+  
+  <!-- Terminal Prompt > em azul primario -->
+  <path d="M5.5 11 L9 15 L5.5 19" fill="none" stroke="url(#brand-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Monograma T -->
+  <path d="M11 11 L19.5 11 M15.25 11 L15.25 21.5" fill="none" stroke="#f4f4f5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Monograma A -->
+  <path d="M20.5 21.5 L24 11 L27.5 21.5 M21.7 18 L26.3 18" fill="none" stroke="#f4f4f5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

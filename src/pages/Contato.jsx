@@ -4,7 +4,7 @@ import {
   FaGithub,
   FaWhatsapp,
   FaEnvelope,
-  FaInstagram,
+  FaLinkedin,
   FaCopy,
   FaCheck,
   FaPaperPlane,
@@ -165,21 +165,21 @@ const Contato = () => {
               </a>
 
               <a
-                href={PROFILE.urls.instagram}
+                href={PROFILE.urls.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-card p-4 rounded-2xl border border-zinc-800 flex items-center gap-3 hover:border-blue-500/40 hover:bg-zinc-900/90 transition-all group"
               >
-                <FaInstagram
+                <FaLinkedin
                   size={22}
                   className="text-zinc-300 group-hover:text-blue-400 transition-colors"
                 />
                 <div>
                   <span className="text-xs font-bold text-white block">
-                    Instagram
+                    LinkedIn
                   </span>
                   <span className="text-[11px] text-zinc-400">
-                    @{PROFILE.githubUsername}
+                    /in/thiago-araújo
                   </span>
                 </div>
               </a>

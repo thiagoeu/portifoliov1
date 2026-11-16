@@ -12,7 +12,7 @@ export const PROFILE = Object.freeze({
   urls: Object.freeze({
     github: "https://github.com/thiagoeu",
     whatsapp: "https://wa.me/5583996485508",
-    instagram: "https://instagram.com/thiagoeu",
+    linkedin: "https://www.linkedin.com/in/thiago-ara%C3%BAjo-946183227",
     cv: "https://drive.google.com/file/d/1rL_BwkCHBXHYMH-bR-eE-aczHoJ0yk1z/view?usp=sharing",
   }),
   roles: Object.freeze([

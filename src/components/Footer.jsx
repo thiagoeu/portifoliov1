@@ -1,4 +1,4 @@
-import { FaGithub, FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { PROFILE } from "../constants/profile";
 
 const Footer = () => {
@@ -55,14 +55,14 @@ const Footer = () => {
             <FaWhatsapp size={18} />
           </a>
           <a
-            href={PROFILE.urls.instagram}
+            href={PROFILE.urls.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            aria-label="LinkedIn"
             className="p-3 rounded-full bg-zinc-900 text-zinc-300 hover:text-blue-400 hover:bg-zinc-800 border border-zinc-800 transition-all duration-300 hover:scale-110"
-            title="Instagram"
+            title="LinkedIn"
           >
-            <FaInstagram size={18} />
+            <FaLinkedin size={18} />
           </a>
         </div>
       </div>
